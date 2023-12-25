@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms demo</title>
+</head>
+<body>
+    <h1> Forms Demo </h1>
+    <button>Outside form </button>
+    <br>
+    <!--THe button which is in the form tag is always got in the action with the action mentioned in the form tag -->
+    <form action="/formmaking"> 
+
+        <!--Making the button the type of the button so the action of form cannot be access -->
+        <button type="button">Inside the form at the top </button>
+        <!-- Default the type will be sumbit in the type of button in the form -->
+        <br>
+
+        <!--the name attribute make the submit to got to http://127.0.0.1:3000/formmaking?name=Sohan&password=dfadf-->
+        <!--The gives the request param the key and valuie-->
+        <label for="Username">Enter the Username </label>
+        <input id="Username" type="text" placeholder="Name" name="name">
+        <br>
+        <label for="pass"> Enter the Password </label>
+        <input id="pass" type="password" name="password" placeholder="Enter your password">
+        <button>Inside form </button>
+        <br>
+        
+        <label for="c">Pick the Color </label>
+        <input type="color" id="c">
+        <br>
+        <label for="month">Enter the month </label>
+        <input type="month" id="month">
+        <br>
+        <label for="search">Enter the search key</label>
+        <input type="search" id="search" placeholder="Enter the search">
+        <br>
+        <label for="w">Enter the week </label>
+        <input type="week" id="w">
+        <br>
+        <label for="num">Enter the number</label>
+        <input id="num" type="number" step="2" min="1" max="10" placeholder="Enter the number">
+        <button>Submit</button>
+    </form>
+
+    <hr>
+    <h2> The form key and value submission mean to say //search/?key=value </h2>
+
+    <form action="https://www.google.com/search">
+        <label for="searching">Enter the search item </label>
+        <input type="text" name="q" id="searching">
+        <input type="submit">
+    </form>
+
+    <hr>
+    <h2> search on Youtube </h2>
+    <form action="https://www.youtube.com/results">
+        <label> Enter the youtube search 
+            <input type="text" name="q">
+        </label>
+        <button>Youtube results</button>
+    </form>
+    <hr>
+    <h2>Radio Buttons </h2>
+    <!--/formmaking?agree=on-->
+    <form action="/formmaking">
+        <!-- checked attribute makes the radio button to be checked by default -->
+        <input type="checkbox" id="r1" name="agree" checked>
+        <label for="r1">Accept for all terms and conditions </label>
+        
+        <!-- the grouping of radio buttons is done by giving the name of all the radion buttons
+         to be grouped with same name -->
+         <!--ormmaking?agree=on&option=203 the 203 is the option value of the radion buttons -->
+        <p>
+            <label for="1">A</label>
+            <input type="radio" name="option" id="1" value="101">
+            <label for="2">B</label>
+            <input type="radio" name="option" id="2" value="201">
+            <label for="3">C</label>
+            <input type="radio" name="option" id="3" value="203">
+        </p>
+        <p>
+            <!--formmaking?agree=on&m=rolls-->
+            <!-- preselection is done by selected attribute-->
+            <label for="meal">Please select the meal </label>
+            <select name="m" id="meal">
+                <option value="chicken kabab">Chicken kabab</option>
+                <option value="rolls">rolls </option>
+                <option value="veg manchuruian" selected > veg manchurian </option>
+            </select>
+        </p>
+        <!--/formmaking?agree=on&m=veg+manchuruian&volume=8-->
+        <!-- To make default the value is 5-->
+        <p>
+            <label for="volume">Volume</label>
+            <input type="range" name="volume" id="volume" min="1" value="5" max="10">
+        </p>
+
+        <p>
+            <label for="comment">YOur Comments</label>
+            <textarea name="comment" id="comment" cols="50" rows="20" placeholder="type your comment"></textarea>
+        </p>
+
+        <input type="submit">
+    </form>
+
+    <hr>
+    <h2> Validation Demo "how does client side Validation happens"</h2>
+    <form action="/validation">
+        <div>
+        <label for="1">first name</label>
+        <input type="text" name="firstname" id="1" required>
+        </div>
+        <div>
+        <label for="username">Username</label>
+        <input type="text" name="user" id="username" minlength="8" maxlength="12" required>
+        </div>
+        <div>
+            <label for="3">Email</label>
+            <input type="email" name="em" id="3" required>
+        </div>
+        <button>submit</button>
+    </form>
+
+</body>
+</html>
